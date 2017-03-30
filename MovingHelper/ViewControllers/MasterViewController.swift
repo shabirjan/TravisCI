@@ -162,6 +162,7 @@ extension MasterViewController  {
   override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.cellIdentifierFromClassName(), for: indexPath) as! TaskTableViewCell
     let task = taskForIndexPath(indexPath)
+    cell.delegate = self
     cell.configureForTask(task)
     
     return cell
